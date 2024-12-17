@@ -1,14 +1,25 @@
 
 import './App.css'
+import Body from './components/Body'
+import Browse from './components/Browse'
+import {createBrowserRouter, RouterProvider} from "react-router"
 
 function App() {
 
+  const appRouter = createBrowserRouter([
+    {
+        path : "/",
+        element: <Body />
+    },
+    {
+      path:"/browse",
+      element: <Browse />
+    }
+])
 
   return (
     <>
-          <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <RouterProvider router={appRouter} />
     </>
   )
 }
